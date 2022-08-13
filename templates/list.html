@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <title>Списки</title>
+        <meta charset="utf-8">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            table:nth-child(1) {
+                float: left;
+                border-collapse: collapse;
+            }
+            table:nth-child(2) {
+                float: right;
+                border-collapse: collapse;
+            }
+            div {
+                margin: 10px 25% 0 25%;
+            }
+            th, td {
+                text-align: center;
+                padding: 0 20px 0 20px;
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <th>Chat_id</th>
+                    <th>Баланс</th>
+                    <th>Статус</th>
+                    <th>Доступ</th>
+                    <th>Никнейм</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td>{{ user[3] }}</td>
+                    <td>{{ user[4] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Родитель</th>
+                        <th>Ребёнок</th>
+                    </tr>
+                    {% for referral in referrals %}
+                    <tr>
+                        <td>{{ referral[0] }}</td>
+                        <td>{{ referral[1] }}</td>
+                        <td>{{ referral[2] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+        </div>
+    </body>
+</html>
